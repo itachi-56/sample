@@ -1,0 +1,81 @@
+.bg_red {
+  background-color: #ff0000;
+}
+
+.bg_blue {
+  background-color: #2b00ff;
+}
+
+.bor_red {
+  border: 5px solid #ff0000;
+}
+
+.bor_blue {
+  border: 5px solid #2b00ff;
+}
+
+.bg_red .inner {
+  color: yellow;
+}
+
+.bg_blue .inner {
+  color: rgb(232, 39, 39);
+}
+
+.text_clr {
+  color: #fff;
+}
+
+.auth_background {
+  background-image: url('/login/auth_background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: 0;
+}
+
+.gradient_border {
+  position: relative;
+  border-radius: 40px;
+  padding: 2px;
+}
+
+.gradient_border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit; /* Match outer border radius */
+  padding: 2px;
+  background: linear-gradient(to right, #c4d3f1 1%, #c4d3f1 40%, #c4d3f1 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@media only screen and (min-width: 768px) {
+  .gradient_border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit; /* Match outer border radius */
+    padding: 2px;
+    background: linear-gradient(to right, #fff 1%, #c4d3f1 40%, #c4d3f1 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+.content {
+  background: linear-gradient(to right, #ffffff6c 50%, transparent 100%);
+  border-radius: 38px;
+}

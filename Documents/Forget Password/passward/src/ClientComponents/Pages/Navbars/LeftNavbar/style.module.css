@@ -1,0 +1,25 @@
+.slow_open {
+  transition-duration: 5s;
+}
+
+.hide {
+  display: none;
+  transition-duration: 5s;
+}
+
+.show {
+  display: block;
+  transition-duration: 5s;
+}
+
+path .fill {
+  color: blue;
+}
+
+.sub_menu_shadow {
+  box-shadow: 0px 2px 10px 0px #1d57c738;
+}
+
+.hamburger_height {
+  height: 71px;
+}
