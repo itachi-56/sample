@@ -8,7 +8,7 @@ const ImageTag = (props: { src: string; alt: string; className?: string }) => {
       alt={props.alt}
       width={1000}
       height={150}
-      className={`h-full w-auto ${props.className}`}
+      className={`h-full w-auto  ${props.className}`}
     ></Image>
   );
 };

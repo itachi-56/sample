@@ -9,11 +9,11 @@ const AuthLayout = async ({ children }: { children: React.ReactNode }) => {
         className={`h-full ${style.auth_background} bg-cover 2xl:bg-contain w-full grid grid-rows-[80px,1fr,60px] 2xl:grid-rows-[80px,1fr,200px]`}
       >
         <div className=" flex space-x-3 mt-6">
-          <div className=" pl-3 h-[25px] md:pl-4  md:h-[30px] xl:h-[25px] lg:pl-[40px] lg:pt-1 ">
-            <ImageTag src={'/image/admin.svg'}  alt={'Admin Logo'}/> 
+          <div className=" pl-3 h-[25px] md:pl-4  md:h-[26px] xl:h-[25px]  lg:pl-[40px] lg:pt-1 ">
+            <ImageTag src={'/image/admin.svg'}  alt={'Admin Logo'} className='lg:h-[15]'/> 
             
           </div>
-          <h1 className='text-[#1D57C7] font-extrabold h-[45px] mt-0.5 md:h-[40px] xl:h-[25px] ' >ADMIN</h1>
+          <h1 className='text-[#1D57C7] text-[19px] md:text-[19px] lg:text-[16px] font-extrabold mb-0.5   ' >ADMIN</h1>
         </div>
 
         <div className="flex justify-center items-center h-full w-full p-4 lg:p-0 md:px-[4rem]">
@@ -61,7 +61,7 @@ const AuthLayout = async ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
 
-        <div className=" p-1 text-center text-[12px] text-[#4E73BD] leading-5 flex flex-col justify-center md:p-2 md:px-3 md:flex-row md:justify-center md:items-end lg:p-3 lg:text-[14px] lg:px-6 lg:tracking-wide">
+        <div className=" p-1 text-center text-[14px]  text-[#4E73BD] leading-5 flex flex-col justify-center md:p-2 md:px-3 md:flex-row md:justify-center md:items-end lg:p-3 lg:text-[14px] lg:px-6 lg:tracking-wide">
           <div>
             Copyright ©2024, Converse Data Solutions.All Rights Reserved.
           </div>
