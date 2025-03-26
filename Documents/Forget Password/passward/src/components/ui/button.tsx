@@ -9,8 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        primary:
+          "bg-[#1D57C7] text-[16px] text-white font-semibold w-[95px] h-[39px] rounded-[4px] transition-all duration-500 ease-linear cursor-pointer border border-[#1D57C7] hover:text-[#1D57C7] hover:bg-white",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
@@ -29,16 +29,19 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "primary",
       size: "default",
+      
     },
   }
-)
+);
+
 
 function Button({
   className,
   variant,
   size,
+  type="submit",
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> &

@@ -2,33 +2,66 @@
 import { Button } from "@/components/ui/button";
 import PasswordInput from "@/Components/Ui/password";
 import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+
+type FormData = {
+  password: string;
+  confirmPassword: string;
+};
 
 const ChangePassword = () => {
-  const route = useRouter();
-  const Sucess = () => {
-    route.push("/auth/success");
+  const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>();
+  const router = useRouter();
+
+  const password = watch("password");
+
+  const onSubmit = (data: FormData) => {
+    console.log("the password",data)
+    router.push("/auth/success");
   };
 
   return (
-    <div>
-      <div className="grid grid-cols-1 gap-10">
-        <div className="flex justify-center relative">
-          <PasswordInput label="Enter Password" id="password" />
-        </div>
-        <div className="flex justify-center relative">
-          <PasswordInput label="Confirm Password" id="confirm password" />
-        </div>
+    <form onSubmit={handleSubmit(onSubmit)}>   
+      <div className="grid grid-cols-1 gap-9">
+     
+        <PasswordInput
+          label="Enter Password"
+          id="password"
+          register={register("password", {
+            required: "Please enter a strong password",
+            minLength: { value: 8, message: "Password must be at least 8 characters long" },
+            pattern: {
+              value: /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+              message:
+                "Must include one uppercase & one special character ",
+            },
+          })}
+          error={errors.password?.message}
+          hasError={!!errors.password}
+        />
 
-        <div className="flex justify-center relative">
+        <PasswordInput
+          label="Confirm Password"
+          id="confirmPassword"
+          register={register("confirmPassword", {
+            required: "Please confirm your password",
+            validate: (value) => value === password || "Please provide the same password to proceed",
+          })}
+    
+         
+          error={errors.confirmPassword?.message}
+          hasError={!!errors.confirmPassword}
+        />
+
+        
+        <div className="flex justify-center">
           <Button
-            className="bg-[#1D57C7] text-[16px] text-white font-semibold w-[95] h-[38] rounded-[4px] transition-all duration-500  ease-linear cursor-pointer border border-[#1D57C7] hover:text-[#1D57C7] hover:bg-white "
-            onClick={Sucess}
           >
             Submit
           </Button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

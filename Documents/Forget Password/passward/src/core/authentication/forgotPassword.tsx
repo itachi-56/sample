@@ -5,22 +5,23 @@ import { Input } from '@/components/ui/input'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import React from 'react';
-import { ErrorIcon } from './icons'
+import { ErrorIcon } from '../../Components/Ui/icons'
 
 
 
 
 const ForgotPass=() =>{
+  const route=useRouter();
+
 const {register,handleSubmit,formState: { errors }} =useForm<
-{email:"string"}
+{email:"string"},
+{className:"string"}
 >()
 const SendMail=(data:any)=>{
 console.log("Email",data)
-}
-const route=useRouter();
-const EmailVerify=()=>{
 route.push("/auth/verify-email")
-  }
+
+}
 
 
   return (
@@ -45,7 +46,7 @@ route.push("/auth/verify-email")
   })}
 />
 
-{/* Floating Label (Turns Red on Error) */}
+
 <label  
   className={`absolute text-sm duration-300 transform 
     -translate-y-4 scale-75 top-1 left-[10px] z-10 px-2 
@@ -56,17 +57,19 @@ route.push("/auth/verify-email")
     dark:text-gray-400 peer-focus:dark:text-blue-500`}>
   E-mail
 </label>
-    <br/>
   
-  
-    {errors.email && <p className="text-red-500 text-sm mt-1 absolute top-full left-0"><ErrorIcon/>{errors.email.message} </p>}
+   {errors.email && <p className="text-red-500 text-sm mt-1 absolute top-full left-0 flex space-x-1"><span className='p-1 '><ErrorIcon /></span> {errors.email.message} </p>}
 
+
+  
+  
+    
 
     
   
 </div>
   <div className='flex justify-center relative pt-10'>  
-      <Button className={`bg-[#1D57C7] text-[16px] text-white font-semibold w-[95] h-[38] rounded-[4px] transition-all duration-500  ease-linear cursor-pointer border border-[#1D57C7] hover:text-[#1D57C7] hover:bg-white `} type='submit'>Reset</Button>
+      <Button>Reset</Button>
       </div>
  </form> 
 
