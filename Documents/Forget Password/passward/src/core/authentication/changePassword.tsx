@@ -25,7 +25,8 @@ const ChangePassword = () => {
       <div className="grid grid-cols-1 gap-9">
      
         <PasswordInput
-          label="Enter Password"
+        
+          label="New Password"
           id="password"
           register={register("password", {
             required: "Please enter a strong password",
@@ -39,10 +40,11 @@ const ChangePassword = () => {
           error={errors.password?.message}
           hasError={!!errors.password}
         />
-
+<div className="relative bottom-3 ">
         <PasswordInput
           label="Confirm Password"
           id="confirmPassword"
+        
           register={register("confirmPassword", {
             required: "Please confirm your password",
             validate: (value) => value === password || "Please provide the same password to proceed",
@@ -51,11 +53,11 @@ const ChangePassword = () => {
          
           error={errors.confirmPassword?.message}
           hasError={!!errors.confirmPassword}
-        />
+        /></div>
 
         
         <div className="flex justify-center">
-          <Button
+          <Button className="relative bottom-[1px] right-[1px] lg:w-[92] lg:h-[38] "
           >
             Submit
           </Button>

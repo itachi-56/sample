@@ -11,7 +11,7 @@ const BackHome=()=>{
 
   return(
 <Button
-            className="bg-[#1D57C7] text-[16px] text-white font-semibold w-[126px] h-[39px] rounded-[4px] transition-all duration-500  ease-linear cursor-pointer border border-[#1D57C7] hover:text-[#1D57C7] hover:bg-white "
+            className=" w-[126px] h-[39px] relative top-[6px] left-2  "
             onClick={BackLogin}
           >Back to Log In</Button>
   )

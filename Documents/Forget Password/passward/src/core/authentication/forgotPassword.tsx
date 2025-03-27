@@ -29,9 +29,9 @@ route.push("/auth/verify-email")
     
 <div className='grid grid-cols-1 gap-10'> 
 <form onSubmit={handleSubmit(SendMail)}> 
- <div className='flex justify-center relative' >  
+ <div className='flex justify-center relative bottom-[15px] right-2' >  
  <Input  
-  className={`block font-lato px-2.5 pb-2.5 pt-4 w-full md:w-[400px] h-[40px] text-sm text-gray-900 bg-transparent rounded-sm border 
+  className={`block font-lato px-2.5 pb-2.5  pt-4 w-full md:w-[400px] lg:h-[38px] text-sm text-gray-900 bg-transparent rounded-[3px] border 
     ${errors.email ? "border-red-500 focus:border-red-500" : "border-gray-300 focus:border-blue-600"} 
     appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 
     focus:outline-none focus:ring-0 peer`}
@@ -68,12 +68,12 @@ route.push("/auth/verify-email")
     
   
 </div>
-  <div className='flex justify-center relative pt-10'>  
-      <Button>Reset</Button>
+  <div className='flex justify-center relative top-[33px] right-[8px] '>  
+      <Button className='w-[91px] h-[36px]'>Reset</Button>
       </div>
  </form> 
 
-<div className="flex justify-center ">
+<div className="flex justify-center relative top-[30px] right-[4px]">
           <h1 className="text-[#495057] text-sm lg:text-[15px] font-[400px]">
             Remember?
             <a href="" className="text-[#1D57C7] ml-2 font-[500px] ">
